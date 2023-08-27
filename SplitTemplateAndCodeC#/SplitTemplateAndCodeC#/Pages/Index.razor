@@ -1,0 +1,31 @@
+﻿@page "/"
+@inject NavigationManager nav;
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello</h1>
+
+Welcome in blazor.
+
+<div>
+    <button @onclick=GoToPartialClass>Partial Class</button>
+    <button @onclick=GoToBaseClass>Base Class</button>
+</div>
+
+@code{
+    void GoToPage(string path)
+    {
+        nav.NavigateTo(path);
+    }
+
+    void GoToPartialClass()
+    {
+        GoToPage("partialclass");
+    }
+
+    void GoToBaseClass()
+    {
+        GoToPage("baseclass");
+    }
+
+}
